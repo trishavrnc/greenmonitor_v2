@@ -65,9 +65,12 @@ if st.button("Start"):
         st.header("Predicted using Resnet50")
         if source_img is not None:
             result = classify_images_resnet(source_img)
+            st.write(result)
+            fam_name()
 
 
     with other_column:
         st.header("Predicted using MobileNetV3Large")
         result = classify_images_mobilenet3(source_img)
-        fam_name(result)
+        st.write(result)
+        fam_name()
