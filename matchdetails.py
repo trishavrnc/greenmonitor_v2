@@ -2,6 +2,7 @@ import pandas as pd
 import os
 from PIL import Image
 import matplotlib.pyplot as plt
+import random
 
 df = pd.read_csv('plantae.csv')
 
@@ -20,11 +21,27 @@ def get_invasive_species_by_family(family): # DISPLAY INVASIVE SPECIES, IF NONE,
 def display_images(family): # DISPLAY 3 IMAGES OF INPUT
     images_dir = os.path.join('data', family)
     
+    # image_files = os.listdir(images_dir)
+    
+    # return [os.path.join(images_dir, image_files[i]) for i in range(min(3, len(image_files)))]
+
+    # Check if the directory exists
+    if not os.path.exists(images_dir):
+        print(f"Directory {images_dir} does not exist")
+        return []
+    
     image_files = os.listdir(images_dir)
     
+    # Shuffle the list to get random images
+    random.shuffle(image_files)
+
+    # Debugging: print the list of found images
+    print(f"Found image files: {image_files}")
+
+    # Return paths to up to 3 random images of invasive species
     return [os.path.join(images_dir, image_files[i]) for i in range(min(3, len(image_files)))]
 
-family_input = 'Acoraceae' # SAMPLE INPUT
+family_input = 'Malpighiales' # SAMPLE INPUT
 
 image_paths = display_images(family_input) # SAMPLE RETRIEVE PICS
 for image_path in image_paths:
