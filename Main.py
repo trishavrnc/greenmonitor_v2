@@ -23,7 +23,7 @@ def fam_name():
         st.markdown(f"<h4 style='text-align=center;'>No invasive species found {family_name}. </h4>", unsafe_allow_html=True)
 
     # Display sample images for the family
-    st.markdown("<h4>Sample Images</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 style='text-align:center'>Sample Images</h4>", unsafe_allow_html=True)
     image_paths = display_images(family_name)
 
     for image_path in image_paths:

@@ -41,17 +41,17 @@ def display_images(family): # DISPLAY 3 IMAGES OF INPUT
     # Return paths to up to 3 random images of invasive species
     return [os.path.join(images_dir, image_files[i]) for i in range(min(3, len(image_files)))]
 
-family_input = 'Malpighiales' # SAMPLE INPUT
+# family_input = 'Malpighiales' # SAMPLE INPUT
 
-image_paths = display_images(family_input) # SAMPLE RETRIEVE PICS
-for image_path in image_paths:
-    image = Image.open(image_path)
-    plt.imshow(image)
-    plt.axis('off')
-    plt.show()
+# image_paths = display_images(family_input) # SAMPLE RETRIEVE PICS
+# for image_path in image_paths:
+#     image = Image.open(image_path)
+#     plt.imshow(image)
+#     plt.axis('off')
+#     plt.show()
 
-invasive_species_list = get_invasive_species_by_family(family_input) # SAMPLE DISPLAY INVASIVE SPECIES
-if invasive_species_list != 0:
-    print("Invasive species in the family", family_input, ":", invasive_species_list)
-else:
-    print("No invasive species found for the given family.")
+# invasive_species_list = get_invasive_species_by_family(family_input) # SAMPLE DISPLAY INVASIVE SPECIES
+# if invasive_species_list != 0:
+#     print("Invasive species in the family", family_input, ":", invasive_species_list)
+# else:
+#     print("No invasive species found for the given family.")
