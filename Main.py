@@ -4,16 +4,6 @@ from runmodel_resnet import classify_images_resnet
 from runmodel_mobilenetv3 import classify_images_mobilenet3
 from matchdetails import get_invasive_species_by_family, display_images
 
-# Import TensorFlow and Keras with error handling
-try:
-    import tensorflow as tf
-    from runmodel_resnet import classify_images_resnet
-    from runmodel_mobilenetv3 import classify_images_mobilenetv3
-    from matchdetails import get_invasive_species_by_family, display_images
-except ImportError as e:
-    st.error(f"Error importing modules: {e}")
-    st.stop()
-
 def resize_image_square(image, size):
     width, height = image.size
     new_size = (size, size)
